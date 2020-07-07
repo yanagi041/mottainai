@@ -1,0 +1,42 @@
+<?php
+
+use Carbon\Carbon;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class UsersTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        // コンビニ会員アカウントを10作る
+        for ($i = 1; $i < 11; $i++) {
+            DB::table('users')->insert([
+            'email' => 'c-'.$i.'@example.com',
+            'group_id' => '1',
+            'password' => bcrypt('password'),
+            'shop_name' => 'タナカマート',
+            'branch_name' => $i.'号支店',
+            'prefecture' => '東京都',
+            'address' => '新宿区'.$i.'丁目'.$i.'-'.($i + 1),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        }
+
+        //ユーザー(購入者)アカウントを10作る
+        for ($i = 1; $i < 11; $i++) {
+            DB::table('users')->insert([
+            'email' => 'u-'.$i.'@example.com',
+            'group_id' => '2',
+            'password' => bcrypt('password'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        }
+    }
+}

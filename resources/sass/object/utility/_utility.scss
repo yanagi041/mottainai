@@ -1,0 +1,23 @@
+/* ---------------------------------
+u-
+--------------------------------- */
+//2カラムにする
+.u-two-column {
+	display: flex;
+	padding-top: $space_2l;
+}
+
+//中央揃え
+.u-textalign-center {
+	text-align: center;
+}
+
+//取り消し線
+.u-line-through {
+	text-decoration: line-through;
+}
+
+.u-small-by-h2{
+    font-size:$font-size_s;
+    font-weight: 400;
+}

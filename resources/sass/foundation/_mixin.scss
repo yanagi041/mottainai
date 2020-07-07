@@ -1,0 +1,27 @@
+//====================================
+//mixin
+//====================================
+
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin form {
+    font-size: $font-size_m;
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    border: 1px solid #e7eaec;
+}
+
+@mixin item-button {
+    padding: $space_s;
+    text-align: center;
+}
+
+// @mixin fontsizeVw($size) {
+//   $winW: 768; // 画面幅を設定する
+//   font-size: ($size / $winW) * 100 + vw;
+// }

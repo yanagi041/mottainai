@@ -1,0 +1,23 @@
+//====================================
+//c-form
+//====================================
+.c-form {
+    padding-top: $space_2l;
+    padding-bottom: $space_2l;
+    &__container {
+        display: flex;
+    }
+    &__group {
+        padding-bottom: $space_l;
+        label {
+            text-align: left;
+        }
+    }
+    &__error {
+        font-size: $font-size_s;
+        color: red;
+    }
+    &__label__char {
+        font-size: $font-size_s;
+    }
+}

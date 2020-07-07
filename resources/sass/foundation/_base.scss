@@ -1,0 +1,162 @@
+//====================================
+// base
+//====================================
+
+body ,
+html {
+    font-family: $font-family_default;
+    font-size: 62.5%; //10px
+    font-weight: 300;
+    line-height: 1.6;
+    display: flex;
+    flex-flow: column;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    text-size-adjust: 100%;
+    color: #333;
+}
+h1 {
+    font-size: $font-size_4l;
+}
+
+h2 {
+    font-size: $font-size_2l;
+    margin-bottom: $space_2l;
+    text-align: center;
+}
+h3 {
+    font-size: $font-size_l;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+input[type=text] ,
+input[type=password] ,
+input[type=email] {
+    @include form;
+}
+
+label {
+    font-size: $font-size_m;
+}
+
+tr ,
+th ,
+td {
+    padding: 5px;
+    border: $border;
+}
+
+th {
+    min-width: 80px;
+    background-color: $color-main-accent;
+}
+
+//====================================
+// https://www.webcreatorbox.com/tech/css-svg-checkbox
+//チェックボックス消す
+input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+
+    -webkit-appearance: none;
+            appearance: none;
+}
+//チェックボックス表示
+input[type=checkbox] +
+ span::before {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: .5rem;
+    content: "";
+    border: 2px solid #ccc;
+    border-radius: 2px;
+}
+//SVGでチェックマーク
+input[type=checkbox]:checked +
+ span::before {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpolyline fill='none' stroke='%230bd' stroke-width='3' points='2,7.3 7.3,12.7 18,2 '/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+}
+
+//====================================
+//スマホ用
+.sp {
+    display: none;
+
+    @include mq() {
+        display: block;
+    }
+}
+
+//PC用
+.pc {
+    display: block;
+
+    @include mq() {
+        display: none;
+    }
+}
+
+
+//====================================
+//ページネーション
+.pagination {
+    font-size: $font-size_l;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: $space_2l;
+    a {
+        display: block;
+    }
+
+    .page-item {
+        width: 22px;
+        margin: 0 5px;
+        text-align: center;
+        background-color: $color-main;
+    }
+    .active {
+        background-color: $color-sub;
+    }
+}
+
+//====================================
+//プレースホルダーの色変更
+/* 標準版 */
+:placeholder-shown {
+    color: #b0b0b0;
+}
+
+/* Google Chrome, Safari, Opera 15+, Android, iOS */
+::-webkit-input-placeholder {
+    color: #b0b0b0;
+}
+
+/* Firefox 18- */
+:-moz-placeholder {
+    opacity: 1;
+    color: #b0b0b0;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+    opacity: 1;
+    color: #b0b0b0;
+}
+
+/* IE 10+ */
+:-ms-input-placeholder {
+    color: #b0b0b0;
+}

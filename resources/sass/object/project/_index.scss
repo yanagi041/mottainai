@@ -1,0 +1,45 @@
+//====================================
+//p-index
+//====================================
+.p-index__hero {
+	padding-top: 60px;
+	text-align: center;
+	&__lead {
+		@include mq("md") {
+			padding: $space_l $space_xl 0;
+		}
+		padding: $space_l $space_4l 0;
+		.p-index__bigchar {
+			font-size: $font-size_6l;
+			font-weight: 600;
+		}
+		.p-index__smallchar {
+			text-align: center;
+		}
+	}
+	p {
+		font-size: $font-size_2l;
+		@include mq("md") {
+			font-size: $font-size_s;
+			text-align: left;
+		}
+	}
+}
+
+.p-index {
+	&__lead {
+		text-align: center;
+		p {
+			font-size: $font-size_2l;
+		}
+	}
+	.c-wrapper-button {
+		@include mq("md") {
+			width: 45%;
+		}
+		width: 40%;
+	}
+	button {
+		width: 200px;
+	}
+}

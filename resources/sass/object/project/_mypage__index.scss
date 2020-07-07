@@ -1,0 +1,26 @@
+//====================================
+//p-mypage__index
+//====================================
+.p-mypage__index {
+	&__items {
+		padding-bottom: $space_2l;
+		position: relative;
+		top: -34px;
+		h3 {
+			padding-bottom: $space_s;
+		}
+	}
+	&__itemlist {
+		border: $border;
+		height: 71px;
+		padding: $space_l;
+		&__button {
+			background-color: $color-sub-accent;
+			display: block;
+			font-size: $font-size_xs;
+			height: 39px; // calc(71px - (#{$space_2l} * 2) - (1px * 2) );
+			line-height: 39px; //heightと同じ
+			text-align: center;
+		}
+	}
+}

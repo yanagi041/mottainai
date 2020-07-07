@@ -1,0 +1,90 @@
+//====================================
+// button
+//====================================
+button {
+    a {
+        display: block;
+    }
+}
+
+button:hover {
+    opacity: .9;
+}
+
+//大きいボタン
+.button {
+    font-size: $font-size_l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 70px;
+    padding: 10px;
+    text-align: center;
+
+    @include mq("md") {
+        font-size: $font-size_m;
+    }
+    :hover {
+        opacity: .5;
+    }
+}
+
+.c-button-main {
+    color: white;
+    background-color: $color-main;
+
+    @extend .button;
+}
+
+.c-button-sub {
+    color: white;
+    background-color: $color-sub;
+
+    @extend .button;
+}
+
+.c-single-button-group {
+    display: flex;
+    justify-content: center;
+    padding-top: $space_3l;
+}
+
+.c-double-button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: $space_3l;
+    text-align: center;
+}
+
+.c-wrapper-button {
+    width: 45%;
+    .c-button-main ,
+    .c-button-sub {
+        width: 100%;
+    }
+}
+
+//小さいボタン
+//商品一覧内のボタン
+.c-item-button {
+    padding: $space_s;
+    text-align: center;
+    background-color: $color-main;
+}
+
+.c-item-button-sub-accent {
+    background-color: $color-sub-accent;
+
+    @extend .c-item-button;
+}
+
+.c-item-button-sold {
+    cursor: inherit;
+    pointer-events: none;
+    color: #fff;
+    background-color: #bebebe;
+
+    @extend .c-item-button;
+}

@@ -1,0 +1,42 @@
+//====================================
+//c-sidebar
+//====================================
+.c-sidebar {
+    width: 180px;
+    padding: 0 $space_s;
+    &__menu {
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            width: 100%;
+            height: 40px;
+            margin-bottom: -1px;
+            padding: 0 $space_m;
+            border-collapse: collapse;
+            cursor: pointer;
+            border: $border;
+            a {
+                display: block;
+            }
+        }
+        //一番上のアイテムの場所調整
+        &-item:first-child {
+            margin-top: -1px;
+        }
+    }
+    .c-form {
+        padding-top: 0;
+    }
+    select {
+        font-size: $font-size_s;
+    }
+    //「検索する」ボタン
+    .c-single-button-group {
+        padding-top: $space_m;
+        .c-button-main {
+            height: inherit;
+        }
+    }
+}

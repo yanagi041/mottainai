@@ -1,0 +1,59 @@
+//====================================
+//c-itemlist
+//====================================
+.c-itemlist {
+    width: calc(100% - 180px);//全体からサイドバーの横幅を引く;
+    padding: 0 5px;
+    &__item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: -1px;
+        padding: 5px;
+        border: $border;
+        &__pic {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            width: 59px;
+            margin-right: 10px;
+            img {
+                width: 59px;
+                height: 59px;
+                object-fit: cover;
+            }
+            .discount-price {
+                font-size: $font-size_m;
+                font-weight: 800;
+                color: red;
+                .yen {
+                    font-size: $font-size_m;
+                    margin-top: -3px;
+                    margin-left: -6px;
+                }
+            }
+        }
+        &__text {
+            width: calc(100% - (69px + 80px));
+            margin-left: $space_m;
+            .title {
+                display: inline-block;
+                width: 70px;
+            }
+        }
+        &__buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 80px;
+            &-button {
+                background-color: $color-main;
+            }
+        }
+    }
+    &__item:first-child {
+        margin-top: -1px;
+    }
+    &__sold {
+        background-color: #e3e3e3;;
+    }
+}

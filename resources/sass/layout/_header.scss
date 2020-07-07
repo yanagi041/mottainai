@@ -1,0 +1,137 @@
+//====================================
+//header
+//====================================
+
+.l-header {
+	align-items: center;
+	background: $color-main;
+	display: flex;
+	flex-direction: column;
+	height: 100px;
+	@include mq("md") {
+		height: 60px;
+	}
+	padding: $space_m $space_l;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+	h1 {
+		color: white;
+		font-family: "Nico Moji";
+	}
+	.logo {
+		img {
+			height: 45px;
+			width: 45px;
+		}
+	}
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		max-width: 1140px;
+		ul {
+			display: flex;
+		};
+		&__list {
+			color: white;
+			font-size: $font-size_m;
+			@media screen and (max-width: 620px) {
+				font-size: $font-size_s;
+			}
+			li {
+				margin: 0 10px;
+			}
+		}
+	}
+	&__spmenu {
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 60px;
+		&__line {
+			cursor: pointer;
+			height: 30px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 15px;
+			position: relative;
+			width: 30px;
+			span {
+				background: #333;
+				border-radius: 6px;
+				display: block;
+				height: 4px;
+				position: absolute;
+				transition: .6s;
+				width: 100%;
+				&:first-child {
+					top: 3px;
+				}
+				&:nth-child(2) {
+					top: 13px;
+				}
+				&:last-child {
+					bottom: 3px;
+				}
+			}
+			&.active {
+				span {
+					transition: .6s;
+					&:first-child {
+						top: 50%;
+						transform: rotate(45deg);
+					}
+					&:nth-child(2) {
+						opacity: 0;
+					}
+					&:last-child {
+						top: 50%;
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
+	}
+
+	.pc {
+		width: 100%;
+	}
+}
+
+.navi {
+	&__wrap {
+		background: $color-sub-accent;
+		height: 40vh;
+		padding-top: $space_l;
+		position: absolute;
+		right: 0px;
+		text-align: center;
+		top: 60px;
+		width: 320px;
+		li {
+			a {
+				color: #333;
+				display: block;
+				font-size: $font-size_l;
+				padding-top: 20px;
+			}
+		}
+	}
+	&-enter, &-leave-to {
+		opacity: 0;
+	}
+	&-enter-to, &-leave {
+		opacity: 1;
+	}
+	&-enter-active, &-leave-active {
+		transition: .6s;
+	}
+}
+
+.l-header-light {
+	background: $color-sub;
+	span {
+		background: $color-sub-accent;
+	}
+}

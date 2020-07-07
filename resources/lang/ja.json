@@ -1,0 +1,16 @@
+{
+    "address": "店舗住所",
+    "best_before": "賞味期限",
+    "branch_name": "支店名",
+    "category": "カテゴリー",
+    "email": "メールアドレス",
+    "item_name": "商品名",
+    "itemdetail": "商品詳細",
+    "itemlist_registed": "出品した商品一覧",
+    "itemlist_soldout": "購入された商品一覧",
+    "discount_price": "販売価格(税抜)",
+    "regular_price": "定価(税抜)",
+    "profile": "プロフィール",
+    "regist_item": "出品する",
+    "shop_name": "コンビニ名"
+}

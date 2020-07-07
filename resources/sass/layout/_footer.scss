@@ -1,0 +1,25 @@
+//====================================
+//footer
+//====================================
+
+.l-footer {
+	align-items: center;
+	background: $color-main;
+	color: white;
+	display: flex;
+	font-size: $font-size_m;
+	height: 30px;
+	@include mq("md") {
+		font-size: inherit;
+	}
+	justify-content: center;
+	padding: $space_l;
+	width: 100%;
+}
+
+.l-footer-light {
+	background: $color-sub;
+	span {
+		background: $color-sub-accent;
+	}
+}

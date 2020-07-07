@@ -1,0 +1,17 @@
+//====================================
+//p-home
+//====================================
+.p-home {
+	&__searchbox {
+		margin-right: $space_2l;
+		.c-sidebar__menu-item {
+			margin-bottom: $space_m;
+		}
+	}
+	h2 {
+		margin-bottom: $space_m;
+	}
+	.c-sidebar {
+		margin-top: 3px;
+	}
+}

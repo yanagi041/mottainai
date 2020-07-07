@@ -1,0 +1,62 @@
+//====================================
+//c-item-row
+//====================================
+.c-item-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $space_2l;
+    &__panel {
+        position: relative;
+        width: calc(25% - 4px);
+        margin: 2px;
+        border: $border;
+
+        @include mq('md') {
+            justify-content: center;
+            width: calc(33% - 3px);
+        }
+
+
+
+        &__yen {
+            font-size: 1.0rem;
+            font-weight: 600;
+            position: relative;
+            margin-left: -2px;;
+        }
+        &__header {
+            padding: 5px;
+        }
+        &__pic {
+            text-align: center;
+            background-color: #fafafa;
+            img {
+                height: 80px;
+                object-fit: cover;
+            }
+        }
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            &__price {
+                display: flex;
+                flex-direction: column;
+                text-align: end;
+            }
+            &__text {
+                width: 50%;
+            }
+        }
+        &__big-price {
+            font-family: $font_number;
+            font-size: $font-size_l;
+            color: red;
+        }
+    }
+    &__show {
+        margin-bottom: $space_2l;
+        margin-left: 2px;
+        text-align: left;
+    }
+}

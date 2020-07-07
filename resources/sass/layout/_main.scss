@@ -1,0 +1,20 @@
+//====================================
+//main
+//====================================
+.l-main {
+	display: flex;
+	@include mq("md") {
+		padding: 110px $space_m;
+	}
+	margin: 0 auto;
+	max-width: 740px;
+	min-height: calc(100vh - 30px);
+	padding: 160px $space_4l $space_4l;
+	&__inner {
+		width: 100%;
+	}
+	&__base {
+		display: flex;
+		flex-direction: column;
+	}
+}
