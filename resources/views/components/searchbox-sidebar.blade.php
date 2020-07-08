@@ -16,7 +16,6 @@
                 @endforeach
             </select>
 
-
             <span><i class="far fa-calendar-alt"></i> 賞味期限</i></span>
             <select class="c-sidebar__menu-item" name="bestby">
                 <option value="0">指定なし</option>
