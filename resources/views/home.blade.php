@@ -26,9 +26,6 @@
             {{ $pagination->appends(request()->input())->links() }}
             <!-- ページネーション -->
         </div>
-        <?php
-        var_dump('中身：' . print_r($_GET, true));
-        ?>
     </div>
 
 

@@ -10,45 +10,50 @@ use App\Item;
 use App\User;
 use App\Category;
 
-//用途：商品関連、マイページ用
+// 用途：商品関連、マイページ用
 class ItemsController extends Controller
 {
 
-    //home(商品検索ページ)
+    // home(商品検索ページ)
     public function showHome(Request $request)
     {
-        //　絞り込み条件がある場合
+        // 絞り込み条件がある場合 start
+        // 価格
+        // 入力された価格の文字列取得
         $price = $request->input('discount_price');
-        switch($price){
+        // スコープ関数で使うための変数を定義
+        switch ($price) {
             case 0:
+                $minPrice = '0';
+                $maxPrice = '99999';
                 break;
-            case 'date_yet':
-
+            case '1-99':
+                $minPrice = 1;
+                $maxPrice = 99;
+                break;
+            case '100-199':
+                $minPrice = 100;
+                $maxPrice = 199;
+                break;
+            case '200-499':
+                $minPrice = 200;
+                $maxPrice = 499;
+                break;
+            case '500-':
+                $minPrice = 500;
+                $maxPrice = '';
+                break;
         }
-        $bestby = $request->input('bestby');
-
+        // 入力された賞味期限の文字列取得
+        $bestBy = $request->input('best_by');
 
         $newitems = Item::select('items.id', 'user_id', 'pic', 'item_name', 'regular_price', 'discount_price', 'best_before', 'users.prefecture', 'users.shop_name', 'users.branch_name')
             ->leftjoin('users', 'user_id', '=', 'users.id')->where('is_sold', '0')->where('items.is_deleted', '0')
-            ->when($price, function($query) use($price){
-                return $query->where()
-            })
+            ->getPriceRange($minPrice, $maxPrice)
+            ->getItemWithBestBy($bestBy)
             ->latest('items.updated_at')->paginate(24);
-
-
-
-        // if (request()) {
-        //     // 価格
-        //     // 賞味期限
-        //     // 販売地域
-        //     // 
-        //     // 
-
-        //     $newitems = Item::select('items.id', 'user_id', 'pic', 'item_name', 'regular_price', 'discount_price', 'best_before', 'users.prefecture', 'users.shop_name', 'users.branch_name')
-        //         ->leftjoin('users', 'user_id', '=', 'users.id')->where('is_sold', '0')->where('items.is_deleted', '0')
-        //         ->latest('items.updated_at')->paginate(24);
-        // }
         $pagination = $newitems;
+
         $prefs = config('pref');
         return view('home')->with(['prefs' => $prefs, 'newitems' => $newitems, 'pagination' => $pagination]);
     }

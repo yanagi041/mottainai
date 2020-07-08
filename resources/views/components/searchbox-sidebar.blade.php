@@ -17,7 +17,7 @@
             </select>
 
             <span><i class="far fa-calendar-alt"></i> 賞味期限</i></span>
-            <select class="c-sidebar__menu-item" name="bestby">
+            <select class="c-sidebar__menu-item" name="best_by">
                 <option value="0">指定なし</option>
                 <option value="date_yet">賞味期限前</option>
                 <option value="date_over">賞味期限切れ</option>
@@ -42,7 +42,6 @@
         </form>
 
     </div>
-
+    <!-- end 入力フォーム -->
 
 </div>
-<!-- end 入力フォーム -->
